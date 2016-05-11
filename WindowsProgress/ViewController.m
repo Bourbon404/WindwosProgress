@@ -21,10 +21,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    progress = [[WindowsProgress alloc] initWithFrame:CGRectMake(0, 0, 400, 40)];
+    progress = [[WindowsProgress alloc] init];
     [self.view addSubview:progress];
     progress.center = self.view.center;
 
+    
+    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(change) userInfo:nil repeats:YES];
 }
 

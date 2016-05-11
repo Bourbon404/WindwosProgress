@@ -35,13 +35,19 @@
 {
     if (self = [super init]) {
         self.backgroundColor = [UIColor whiteColor];
+        [self setFrame:CGRectMake(0, 0, 400, 30)];
+        [self.backGradientLayer setFrame:CGRectMake(0, 0, 400, 30)];
     }
     return self;
 }
--(void)setFrame:(CGRect)frame
+-(instancetype)initWithFrame:(CGRect)frame
 {
-    [super setFrame:frame];
-    [self.backGradientLayer setFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor whiteColor];
+        [self setFrame:CGRectMake(0, 0, 400, 30)];
+        [self.backGradientLayer setFrame:CGRectMake(0, 0, 400, 30)];
+    }
+    return self;
 }
 #pragma mark 设置三个渐变层用来展示效果
 -(CAGradientLayer *)backGradientLayer
